@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte</title>
+    <style>
+        body {
+            font-family: Helvetica;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Laboratorio 09 Django</h1>
+
+    <h2>Lenguajes y Frameworks</h2>
+
+    <table>
+
+    <tr>
+        <th>Lenguaje</th>
+        <th>Framework</th>
+    </tr>
+
+    {% for framework in frameworks %}
+
+    <tr>
+        <td>{{ framework.language.name }}</td>
+        <td>{{ framework.name }}</td>
+    </tr>
+
+    {% endfor %}
+
+    </table>
+</body>
+</html>

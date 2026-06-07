@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .utils import render_to_pdf
 
 # Create your views here.
 
@@ -33,3 +34,16 @@ def movies(request):
         context
     )
     
+
+def pdf_report(request):
+
+    frameworks = Framework.objects.all()
+
+    context = {
+        'frameworks': frameworks
+    }
+
+    return render_to_pdf(
+        'peliculas/reporte.html',
+        context
+    )
